@@ -1,0 +1,48 @@
+.hljs-comment,
+.hljs-meta {
+  color: #747474;
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #0b827c;
+  font-weight: var(--weight-bold);
+}
+
+.hljs-subst {
+  color: #0b827c;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-tag .hljs-attr {
+  color: #9050e9;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #2e844a;
+}
+
+.hljs-tag,
+.hljs-attribute {
+  color: #e3066a;
+}
+
+.hljs-built_in,
+.hljs-function .hljs-title {
+  color: #a86403;
+}
+
+.hljs-regexp {
+  color: #d83a00;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: var(--weight-bold);
+}
