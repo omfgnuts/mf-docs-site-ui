@@ -1,54 +1,17 @@
-/* globals */
-@import "vendor/normalize.css";
-@import "globals/vars.css";
-@import "globals/reset.css";
-@import "globals/utility.css";
-@import "globals/global.css";
-@import "globals/grid.css";
-@import "globals/typography.css";
-
-/* pages */
-@import "pages/connector.css";
-@import "pages/connector-article.css";
-@import "pages/connector-home.css";
-
-/* components */
-@import "components/breadcrumbs.css";
-@import "components/button.css";
-@import "components/card.css";
-@import "components/code-snippet-toolbar.css";
-@import "components/github.css";
-@import "components/icon.css";
-@import "components/input.css";
-@import "components/modal.css";
-@import "components/popover.css";
-@import "components/select.css";
-@import "components/skiplink.css";
-@import "components/tooltip.css";
-
-/* specific */
-@import "specific/notice-banner.css";
-@import "specific/gdpr.css";
-@import "specific/header.css";
-@import "specific/nav.css";
-@import "specific/toc.css";
-@import "specific/toolbar.css";
-@import "specific/top-banner.css";
-
-/* adoc */
-@import "adoc/doc.css";
-@import "adoc/doc-footer.css";
-@import "adoc/abstract.css";
-@import "adoc/admonition-block.css";
-@import "adoc/description-list.css";
-@import "adoc/table.css";
-
-/* more pages */
-@import "pages/home.css";
-
-/* vendor */
-@import "vendor/coveo.css";
-
-/* other */
-@import "@asciidoctor/tabs";
+@import "typeface-roboto.css";
+@import "typeface-roboto-mono.css";
+@import "vars.css";
+@import "base.css";
+@import "body.css";
+@import "nav.css";
+@import "main.css";
+@import "toolbar.css";
+@import "breadcrumbs.css";
+@import "page-versions.css";
+@import "toc.css";
+@import "doc.css";
+@import "pagination.css";
+@import "header.css";
+@import "footer.css";
 @import "highlight.css";
+@import "print.css";

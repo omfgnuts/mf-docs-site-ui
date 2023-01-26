@@ -1,8 +1,10 @@
 'use strict'
 
-const { obj: map } = require('through2')
+const log = require('fancy-log')
 const PluginError = require('plugin-error')
 const prettierEslint = require('prettier-eslint')
+const { Transform } = require('stream')
+const map = (transform) => new Transform({ objectMode: true, transform })
 
 module.exports = () => {
   const report = { changed: 0, unchanged: 0 }
@@ -17,23 +19,18 @@ module.exports = () => {
         .concat(' file')
         .concat(report.unchanged === 1 ? '' : 's')
         .concat(' unchanged')
-      console.log(`prettier-eslint: ${changed}; ${unchanged}`)
+      log(`prettier-eslint: ${changed}; ${unchanged}`)
     } else {
-      console.log(`prettier-eslint: left ${report.unchanged} file${report.unchanged === 1 ? '' : 's'} unchanged`)
+      log(`prettier-eslint: left ${report.unchanged} file${report.unchanged === 1 ? '' : 's'} unchanged`)
     }
   })
 
   function format (file, enc, next) {
     if (file.isNull()) return next()
-    if (file.isStream()) {
-      return next(new PluginError('gulp-prettier-eslint', 'Streaming not supported'))
-    }
+    if (file.isStream()) return next(new PluginError('gulp-prettier-eslint', 'Streaming not supported'))
 
     const input = file.contents.toString()
-    const output = prettierEslint({
-      text: input,
-      filePath: file.path,
-    })
+    const output = prettierEslint({ text: input, filePath: file.path })
 
     if (input === output) {
       report.unchanged += 1

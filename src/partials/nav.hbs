@@ -1,12 +1,8 @@
-<nav class="nav fit" aria-label="Docs">
-  {{#if (and env.COVEO_API_KEY (and (ne (site-profile) 'archive') (ne (site-profile) 'jp')))}}
-  <div class="search">
-    <button class="button" id="search-button">
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" alt="">
-        <use xlink:href="#icon-search" />
-      </svg>
-      Search docs
-    </button>
-  </div>
-  {{/if}}
-</nav>
+<div class="nav-container"{{#if page.component}} data-component="{{page.component.name}}" data-version="{{page.version}}"{{/if}}>
+  <aside class="nav">
+    <div class="panels">
+{{> nav-menu}}
+{{> nav-explore}}
+    </div>
+  </aside>
+</div>
